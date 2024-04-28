@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Poppin;
+  src: url(/fonts/Poppins-Regular.ttf);
+ 
+}
+
+@font-face {
+  font-family: Blud;
+  src: url(/fonts/Poppins-Bold.ttf);
+}
+
+.Blud {
+  font-family: Blud;
+}
+
+.Poppin {
+  font-family: Poppin;
+}
+
+:root {
+  font-family: Poppin, Blud;
+  background-color: #1E1E24;
+}
