@@ -1,7 +1,7 @@
 
 const Hero = () => {
   return (
-    <div>Hero</div>
+    <div className="min-h-[90vh] w-full h-screen text-white">Hero</div>
   )
 }
 
