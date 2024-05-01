@@ -7,6 +7,7 @@ import Register from "../pages/auth/landing/Register"
 import MainLayout from "../components/layout/MainLayout"
 import Home from "../pages/home/Home"
 import PrivateRoute from "./PrivateRoute"
+import Create from "../pages/home/Create"
 
 
 export const mainRoute = createBrowserRouter([
@@ -49,6 +50,10 @@ export const mainRoute = createBrowserRouter([
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: "/create",
+                element: <Create />
             }
         ]
     }
