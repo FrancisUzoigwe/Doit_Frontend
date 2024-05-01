@@ -34,6 +34,7 @@ const Register = () => {
       return res.data.data
     })
     setLoading(true)
+    navigate("/signin-account")
     reset()
   })
   return (

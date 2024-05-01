@@ -3,7 +3,7 @@ import Hero from "./Hero"
 const LandingScreen = () => {
     return (
         <>
-            <div>
+            <div className="w-full">
                 <Hero />
             </div>
         </>

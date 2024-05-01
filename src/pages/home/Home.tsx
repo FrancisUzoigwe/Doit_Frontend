@@ -1,12 +1,7 @@
-import { logOut } from "../../global/GlobalState"
-import { useDispatch } from "react-redux"
 
 const Home = () => {
-  const dispatch = useDispatch()
   return (
-    <div className="text-white" onClick={() => {
-      dispatch(logOut())
-    }}>Home</div>
+    <div className="bg-white h-[200vh] w-full">Home</div>
   )
 }
 

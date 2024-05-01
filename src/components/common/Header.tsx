@@ -8,7 +8,7 @@ import { changedToggle, toggled } from "../../global/GlobalState"
 const Header = () => {
     const [scroll, setScroll] = useState<boolean>(false)
     const onScroll = () => {
-        if (window.scrollY >= 10) {
+        if (window.scrollY >= 5) {
             setScroll(true)
         } else {
             setScroll(false)
@@ -18,14 +18,14 @@ const Header = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const toggle = useSelector((state: any) => state.toggle)
-    setInterval(() => {
-        dispatch(changedToggle())
-    }, 10000)
+    // setInterval(() => {
+    //     dispatch(changedToggle())
+    // }, 10000)
     return (
         <>
             {toggle && <DropDown />}
             <div className="w-full h-[70px] flex items-center justify-center">
-                {!scroll ? <div className="w-full h-[70px] flex items-center justify-center fixed  transition-all duration-300">
+                {!scroll ? <div className="w-full h-[70px] flex items-center justify-center bg-[#1E1E24] fixed  transition-all duration-300">
                     <div className="w-[95%] h-full flex items-center justify-between text-white">
                         <div>Doit</div>
                         <div className="flex items-center max-md:hidden">
