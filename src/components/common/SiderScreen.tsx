@@ -9,9 +9,6 @@ const SiderScreen = () => {
     const side = useSelector((state: any) => state.side)
     const location = useLocation()
     const active = location.pathname
-
-
-
     return (
         <>
             <div className={`${side ? "w-[70px]" : "w-[200px]"} h-screen `}>

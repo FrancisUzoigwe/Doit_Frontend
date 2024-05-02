@@ -34,7 +34,7 @@ const Signin = () => {
     signinAccount({ email, password }).then((res: any) => {
       dispatch(mainUser(res))
       navigate("/")
-    })
+    }).catch()
     setLoading(true)
     reset()
   })
