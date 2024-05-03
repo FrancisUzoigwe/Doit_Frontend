@@ -8,7 +8,7 @@ import { DotLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 
 interface FormData {
-  title: string;
+  topic: string;
   content: string;
 }
 
@@ -16,7 +16,7 @@ const Create = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState<boolean>(false);
   const Schema = yup.object().shape({
-    title: yup.string().required(),
+    topic: yup.string().required(),
     content: yup.string().required(),
   });
 
@@ -27,15 +27,15 @@ const Create = () => {
   const user = useSelector((state: any) => state.user);
   const userID = user?._id;
 
-  const onHandleSubmit = handleSubmit(async (data: FormData) => {
+  const onHandleSubmit = handleSubmit(async (data: any) => {
     try {
       setLoading(true);
-      const { title, content } = data;
+      const { topic, content } = data
       if (!userID) {
         // Handle error: user ID not available
         return;
       }
-      await createTask(userID, { content, title });
+      await createTask(userID, { topic, content });
       setLoading(false);
       navigate("/");
     } catch (error: any) {
@@ -55,7 +55,7 @@ const Create = () => {
         </div>
         <input
           className="uppercase text-black my-2 font-black w-[95%] outline-none border-black border rounded-md h-[40px] pl-3"
-          {...register("title")}
+          {...register("topic")}
           placeholder="Title"
         />
         <textarea
