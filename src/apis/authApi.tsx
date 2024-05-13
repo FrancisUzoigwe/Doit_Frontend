@@ -1,7 +1,18 @@
 import axios from "axios"
 import Swal from "sweetalert2"
 
-const url: string = "http://localhost:8080/api/v2"
+const url: string = "https://doitbackend.onrender.com/api/v2"
+
+export const spinUpApi = async () => {
+    try {
+        return await axios.get(url).then(() => {
+            console.log("Active")
+        })
+    } catch (error: any) {
+        console.log(error)
+    }
+}
+
 
 export const registerAccount = async (data: any) => {
     try {

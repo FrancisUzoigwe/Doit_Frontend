@@ -1,5 +1,5 @@
 import axios from "axios"
-const url: string = "http://localhost:8080/api/v2"
+const url: string = "https://doitbackend.onrender.com/api/v2"
 
 export const createTask = async (userID: any, data: any) => {
     try {

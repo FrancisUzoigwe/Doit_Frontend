@@ -26,10 +26,9 @@ const Home = () => {
   }
   const dispatch = useDispatch()
   const userID = user
-  const { data, isLoading }: any = useSWR(`http://localhost:8080/api/v2/${userID}/view-all-task`, fetcher)
+  const { data, isLoading }: any = useSWR(`https://doitbackend.onrender.com/api/v2/${userID}/view-all-task`, fetcher)
 
   const update = useSelector((state: any) => state.update)
-  console.log("Data:", data)
   return (
     <>
       {update && <UpdatePage />}
@@ -42,13 +41,13 @@ const Home = () => {
           {data?.map((props: any) => {
             return (
               <div className="h-[300px] shadow-lg overflow-hidden border rounded-lg flex items-center flex-col relative " key={props?._id} onClick={() => handleClick(props?.topic, props?.content, props?._id)}>
-                <div className="font-black text-[16px] my-2 px-2 uppercase">{props?.topic}</div>
+                <div className="font-black text-[16px] my-2 px-2 uppercase text-center">{props?.topic}</div>
                 <div className="w-[95%] ">{props?.content}</div>
                 <div className="bg-white w-full absolute bottom-0 h-[40px] flex items-center justify-end">
                   <div className="flex items-center">
                     <div className="mr-4"><AiFillDelete className="text-red-600 text-2xl hover:scale-[1.2] transition-all duration-300 hover:cursor-pointer" onClick={() => {
                       deleteTask(userID, props._id).then(() => {
-                        mutate(`http://localhost:8080/api/v2/${userID}/view-all-task`)
+                        mutate(`https://doitbackend.onrender.com/api/v2/${userID}/view-all-task`)
                       })
                     }} /></div>
                     <div className="mr-1 "><FaPencilAlt className="text-xl hover:scale-[1.2] transition-all duration-300 hover:cursor-pointer" onClick={() => {

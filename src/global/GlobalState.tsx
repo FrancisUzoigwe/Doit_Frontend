@@ -6,6 +6,7 @@ interface GlobalState {
     user: any | null,
     side: boolean,
     update: boolean,
+    mobile: boolean,
     selectedBox: { topic: string, content: string, id: string } | null
 }
 
@@ -14,6 +15,7 @@ const initialState: GlobalState = {
     user: {} || null,
     side: false,
     update: false,
+    mobile: false,
     selectedBox: null
 }
 
@@ -50,10 +52,16 @@ const GlobalState = createSlice({
         },
         clearSelectedBox: (state: any) => {
             state.selectedBox = null
+        },
+        mobiled: (state: any) => {
+            state.mobile = true
+        },
+        changedMobile: (state: any) => {
+            state.mobile = false
         }
     }
 });
 
-export const { changedToggle, toggled, logOut, mainUser, changedSide, sided, updated, changeUpdate, clearSelectedBox, selectBox } = GlobalState.actions
+export const { changedToggle, toggled, logOut, mainUser, changedSide, sided, updated, changeUpdate, clearSelectedBox, selectBox, changedMobile, mobiled } = GlobalState.actions
 
 export default GlobalState.reducer
